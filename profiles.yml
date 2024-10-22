@@ -1,0 +1,13 @@
+jaffle_shop: # this needs to match the profile in your dbt_project.yml file
+    target: dev
+    outputs:
+        dev:
+            type: bigquery
+            method: service-account
+            keyfile: C:\Users\carva\OneDrive\Backup - Downloads\analytics-439015-1975b6a36ea5.json # replace this with the full path to your keyfile
+            project: analytics-439015 # Replace this with your project id
+            dataset: dbt_carvalhov # Replace this with dbt_your_name
+            threads: 1
+            timeout_seconds: 300
+            location: US
+            priority: interactive
